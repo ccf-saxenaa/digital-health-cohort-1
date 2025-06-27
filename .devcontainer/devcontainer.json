@@ -1,0 +1,54 @@
+{
+    "name": "Digital Health Cohort 1",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.12",
+    "features": {
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.12",
+            "installTools": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.datawrangler",
+                "ms-python.vscode-pylance",
+                "charliermarsh.ruff",
+                "ms-vscode.vscode-json"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": false,
+                "python.linting.flake8Enabled": false,
+                "python.formatting.provider": "black",
+                "jupyter.askForKernelRestart": false,
+                "jupyter.interactiveWindow.textEditor.executeSelection": true,
+                "files.associations": {
+                    "*.ipynb": "jupyter-notebook"
+                }
+            }
+        }
+    },
+    "forwardPorts": [
+        8888,
+        8000
+    ],
+    "portsAttributes": {
+        "8888": {
+            "label": "Jupyter",
+            "onAutoForward": "notify"
+        },
+        "8000": {
+            "label": "Web Server",
+            "onAutoForward": "ignore"
+        }
+    },
+    "postCreateCommand": "pip install -e .",
+    "remoteUser": "vscode",
+    "mounts": [
+        "source=${localWorkspaceFolder}/.devcontainer/startup.sh,target=/tmp/startup.sh,type=bind,consistency=cached"
+    ],
+    "postStartCommand": "bash /tmp/startup.sh"
+}

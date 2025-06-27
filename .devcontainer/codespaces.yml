@@ -1,0 +1,30 @@
+# GitHub Codespaces configuration
+name: Digital Health Cohort 1
+
+# Use the devcontainer configuration
+image: .devcontainer/Dockerfile
+
+# Codespaces-specific settings
+vscode:
+  extensions:
+    - ms-python.python
+    - ms-toolsai.jupyter
+    - ms-toolsai.datawrangler
+    - ms-python.vscode-pylance
+    - charliermarsh.ruff
+
+# Port forwarding for Jupyter
+ports:
+  - 8888
+  - 8000
+
+# Tasks to run on startup
+tasks:
+  - name: Install Dependencies
+    init: pip install -e ".[dev]"
+
+  - name: Setup Environment
+    command: |
+      echo "🎉 Digital Health Cohort 1 workspace is ready!"
+      echo "📊 Open main.ipynb to start your data analysis"
+      echo "⚠️  Don't forget to upload framingham_heart_study.csv"
