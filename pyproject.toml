@@ -1,0 +1,17 @@
+[project]
+name = "digital-health-cohort-1"
+version = "0.1.0"
+description = "Repo for the digital health cohort"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.3",
+    "pandas>=2.3.0",
+    "requests>=2.32.4",
+    "seaborn>=0.13.2",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]
