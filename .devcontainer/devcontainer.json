@@ -2,7 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
     "name": "Digital Health Cohort 1",
-    "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.12",
     "features": {
         "ghcr.io/devcontainers/features/python:1": {
             "installTools": true,
