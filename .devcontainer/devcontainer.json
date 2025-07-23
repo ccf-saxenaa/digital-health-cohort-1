@@ -1,10 +1,12 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
     "name": "Digital Health Cohort 1",
-    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.12",
+    "image": "gcr.io/devcontainers/python:1-3.12-bullseye",
     "features": {
         "ghcr.io/devcontainers/features/python:1": {
-            "version": "3.12",
-            "installTools": true
+            "installTools": true,
+            "version": "3.12"
         }
     },
     "customizations": {
@@ -47,8 +49,5 @@
     },
     "postCreateCommand": "pip install -e .",
     "remoteUser": "vscode",
-    "mounts": [
-        "source=${localWorkspaceFolder}/.devcontainer/startup.sh,target=/tmp/startup.sh,type=bind,consistency=cached"
-    ],
-    "postStartCommand": "bash /tmp/startup.sh"
+    "postStartCommand": "cp /workspaces/digital-health-cohort-1/.devcontainer/startup.sh /tmp/startup.sh && bash /tmp/startup.sh"
 }
