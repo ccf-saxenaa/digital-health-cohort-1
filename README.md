@@ -13,7 +13,7 @@ The project explores digital health data using Python and Jupyter Notebooks. The
 
 ### Option 1: GitHub Codespaces (Recommended)
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/your-username/digital-health-cohort-1)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ccf-saxenaa/digital-health-cohort-1?quickstart=1)
 
 1. Click the "Open in GitHub Codespaces" badge above
 2. Wait for the environment to build (this may take a few minutes on first launch)
